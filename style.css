@@ -1,136 +1,103 @@
-/* RESET - Remove default browser spaces */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box; /* Makes sizing easier */
-}
+* === 1. RESET - Remove default browser spaces === */
+*{ padding:0; margin:0; box-sizing:border-box; }
 
-/* BODY - Whole page style */
-body{
-    font-family: Arial, sans-serif; /* Font style */
-    line-height: 1.6; /* Space between lines */
-    background: #fffdf9; /* Light background color */
-}
+/* === 2. BODY - Whole website style === */
+body{ font-family:Arial; line-height:1.6; background:#fffdf9; }
 
-/* HEADER - The orange top bar */
+/* === 3. HEADER - Top orange bar === */
 header{
-    background: #ff8c00; /* Orange color */
-    padding: 15px 5%; /* Space inside - 15px top/bottom, 5% left/right */
-    position: sticky; /* Sticks on top when scrolling */
-    top: 0; /* Stick to very top */
-    z-index: 1000; /* Stay above other things */
-    display: flex; /* Put logo and menu side by side */
-    justify-content: space-between; /* Logo left, menu right */
-    align-items: center; /* Center them vertically */
+    background:#ff8c00; /* Orange color */
+    padding:15px 5%; /* Space inside */
+    display:flex; /* Put logo left, menu right */
+    justify-content:space-between;
+    align-items:center;
+    position:sticky; top:0; /* Sticks on top when scrolling */
+    z-index:1000; /* Stay above everything */
 }
 
-/* LOGO - Your restaurant name text */
-.logo{ 
-    color: #fff; /* White color */
-    font-size: 20px; /* Text size */
-    font-weight: bold; /* Make it thick */
-    line-height: 1.2; /* Small space between KACHUMBALI and RESTAURANT */
-}
+/* === 4. LOGO - Restaurant name === */
+.logo{ color:#fff; font-size:20px; font-weight:bold; line-height:1.2; }
 
-/* NAV - The menu container */
-nav{ 
-    display: flex; /* Put HOME ABOUT etc in a row */
-    gap: 15px; /* Space between each link */
-    align-items: center; /* Center them */
-}
+/* === 5. CHECKBOX - Hide it, but it controls menu === */
+#check{ display:none; } /* Invisible but working */
 
-/* NAV LINKS - Each menu item like HOME, ABOUT */
-nav a{ 
-    text-decoration: none; /* Remove underline */
-    color: #14022b; /* Dark color */
-    font-weight: bold; /* Thick text */
-}
-
-/* HOVER - When mouse goes over menu link */
-nav a:hover{ 
-    color: white; /* Turns white when hovered */
-}
-
-/* RESERVATION BUTTON - Special dark button */
-.btn-res{ 
-    background: #14022b; /* Dark background */
-    color: white !important; /* White text - !important means force it */
-    padding: 8px 15px; /* Space inside button */
-    border-radius: 5px; /* Rounded corners */
-}
-
-/* HIDE CHECKBOX - We hide the checkbox, but it still works */
-.menu-toggle{
-    display: none !important; /* Hide it completely */
-}
-
-/* HAMBURGER ICON - The ☰ icon */
+/* === 6. HAMBURGER - The ☰ icon === */
 .hamburger{
-    display: none; /* Hide on computer, show only on phone later */
-    font-size: 30px; /* Big size */
-    color: white; /* White color */
-    cursor: pointer; /* Hand cursor when hover */
+    display:none; /* Hide on computer, show only on phone */
+    font-size:32px;
+    color:#fff;
+    cursor:pointer; /* Hand cursor */
 }
 
-/* HERO SECTION - Big welcome area */
+/* === 7. NAV - Menu links container === */
+nav{ display:flex; gap:18px; align-items:center; }
+nav a{ text-decoration:none; color:#14022b; font-weight:bold; }
+
+/* === 8. RESERVATION BUTTON - Dark button === */
+.btn-res{ background:#14022b; color:#fff!important; padding:8px 14px; border-radius:5px; text-decoration:none; }
+
+/* === 9. HERO - Big welcome section === */
 .hero{
-    min-height: 80vh; /* 80% of screen height */
-    background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(background.jpg); /* Dark overlay + your image */
-    background-size: cover; /* Image covers full area */
-    background-position: center; /* Image centered */
-    color: white; /* White text */
-    display: flex; /* Center content */
-    flex-direction: column; /* Stack items top to bottom */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    text-align: center; /* Text in center */
-    padding: 40px 20px; /* Space inside */
+    min-height:80vh; /* 80% of screen height */
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(background.jpg); /* Dark overlay + image */
+    background-size:cover; background-position:center;
+    color:#fff; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
+    padding:40px 20px;
 }
+.hero h1{ font-size:42px; color:#ffb347; }
+.highlight{ color:#00ffff!important; font-weight:bold; margin-top:15px; }
 
-/* HERO HEADING - Big WELCOME text */
-.hero h1{ 
-    font-size: 42px; /* Big size */
-    color: #ffb347; /* Light orange color */
-    margin-bottom: 20px; /* Space below */
-    line-height: 1.1; /* Tight lines */
-}
-
-/* HIGHLIGHT TEXT - The blue text */
-.highlight{ 
-    color: #00ffff !important; /* Light blue / cyan */
-    margin-top: 15px; /* Space above */
-    font-weight: bold; 
-}
-
-/* ABOUT SECTION - About us area */
+/* === 10. ABOUT - About us section === */
 .about{
-    min-height: 80vh; /* Tall section */
-    background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(LA.jpg); /* Dark overlay + image */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    padding: 40px;
+    min-height:80vh;
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(LA.jpg);
+    background-size:cover; background-position:center;
+    display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
+    color:#fff; font-size:22px; padding:40px;
 }
 
-/* SERVICES SECTION - Light grey background */
-#services{ 
-    background: #f5f5f5; /* Light grey */
-    padding: 60px 20px; /* Big padding */
-}
+/* === 11. SERVICES === */
+#services{ background:#f5f5f5; padding:60px 20px; text-align:center; }
+.services-box ul{ list-style:none; margin:20px 0; } /* No dots */
 
-/* SERVICES BOX - Center the services text */
-.services-box{ 
-    text-align: center; 
-    font-size: 22px; 
-}
+/* === 12. MEALS - Food cards === */
+#meals{ background:#fff; padding:60px 20px; text-align:center; }
+.menu-sub{ color:#555; margin-bottom:15px; }
+.food{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; } /* Auto grid */
+.card{ border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,.15); background:#fff; }
+.card img{ width:100%; height:180px; object-fit:cover; }
+.card-body{ padding:15px; }
+.card-body p{ color:#ff8c00; font-weight:bold; font-size:18px; margin:5px 0 10px; }
+.whatsapp-link{ display:block; background:#25D366; color:#fff; padding:12px; border-radius:6px; text-decoration:none; font-weight:bold; text-align:center; }
 
-/* SERVICES LIST - Remove dots */
-.services-box ul{ 
-    list
-    #check:checked ~ nav{ display:flex !important; }
+/* === 13. BUTTONS === */
+.btn-primary{ display:inline-block; padding:12px 25px; background:#ff8c00; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; margin-top:15px; }
+
+/* === 14. CONTACT === */
+.contact{ text-align:center; background:#2f4f2f; color:#fff; padding:60px 20px; }
+
+/* === 15. RESERVATION FORM === */
+#reservation{ padding:60px 20px; background:#fff8f0; }
+.nasser{ max-width:640px; margin:0 auto; padding:30px; border:1px solid #eadfd0; border-radius:18px; background:#fffdf9; }
+.field{ margin-bottom:15px; text-align:left; }
+.field label{ display:block; font-weight:bold; margin-bottom:5px; }
+.field input,.field select,.field textarea{ width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:15px; }
+.btn-whatsapp{ display:block; width:100%; padding:14px; background:#25D366; color:#fff; border-radius:10px; font-size:18px; font-weight:bold; border:none; cursor:pointer; }
+
+/* === 16. FOOTER === */
+footer{ padding:20px; text-align:center; background:#020617; color:#94a3b8; }
+
+/* === 17. MOBILE PHONE - This works only on small screens === */
+@media(max-width:768px){
+  .hamburger{ display:block; } /* Show ☰ on phone */
+  nav{
+    position:absolute; /* Place below header */
+    top:100%; left:0; width:100%;
+    background:#ff8c00;
+    flex-direction:column; /* Stack vertically */
+    display:none; /* Hidden by default */
+  }
+  nav a{ width:100%; padding:16px 20px; border-bottom:1px solid rgba(0,0,0,0.1); } /* Full width links */
+  #check:checked ~ nav{ display:flex!important; } /* MAGIC: When checkbox checked, show menu */
+  .hero h1{ font-size:32px; } /* Smaller text on phone */
+}
