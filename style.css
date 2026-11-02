@@ -1,53 +1,47 @@
-* === 1. RESET - Remove default browser spaces === */
+/* === RESET - Remove browser default spaces === */
 *{ padding:0; margin:0; box-sizing:border-box; }
 
-/* === 2. BODY - Whole website style === */
+/* === BODY - Whole page === */
 body{ font-family:Arial; line-height:1.6; background:#fffdf9; }
 
-/* === 3. HEADER - Top orange bar === */
+/* === HEADER - Top orange bar === */
 header{
-    background:#ff8c00; /* Orange color */
-    padding:15px 5%; /* Space inside */
-    display:flex; /* Put logo left, menu right */
-    justify-content:space-between;
-    align-items:center;
-    position:sticky; top:0; /* Sticks on top when scrolling */
-    z-index:1000; /* Stay above everything */
+    background:#ff8c00; /* Orange */
+    padding:15px 5%;
+    display:flex; justify-content:space-between; align-items:center;
+    position:sticky; top:0; z-index:1000;
 }
 
-/* === 4. LOGO - Restaurant name === */
+/* === LOGO - Restaurant name === */
 .logo{ color:#fff; font-size:20px; font-weight:bold; line-height:1.2; }
 
-/* === 5. CHECKBOX - Hide it, but it controls menu === */
-#check{ display:none; } /* Invisible but working */
+/* === CHECKBOX - Hide it, it controls menu === */
+#check{ display:none; }
 
-/* === 6. HAMBURGER - The ☰ icon === */
+/* === HAMBURGER - The ☰ icon === */
 .hamburger{
-    display:none; /* Hide on computer, show only on phone */
-    font-size:32px;
-    color:#fff;
-    cursor:pointer; /* Hand cursor */
+    display:none; /* Hidden on computer, visible on phone */
+    font-size:32px; color:#fff; cursor:pointer;
 }
 
-/* === 7. NAV - Menu links container === */
+/* === NAV - Menu links === */
 nav{ display:flex; gap:18px; align-items:center; }
 nav a{ text-decoration:none; color:#14022b; font-weight:bold; }
-
-/* === 8. RESERVATION BUTTON - Dark button === */
 .btn-res{ background:#14022b; color:#fff!important; padding:8px 14px; border-radius:5px; text-decoration:none; }
 
-/* === 9. HERO - Big welcome section === */
+/* === HERO - Welcome section === */
 .hero{
-    min-height:80vh; /* 80% of screen height */
-    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(background.jpg); /* Dark overlay + image */
+    min-height:80vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(background.jpg);
     background-size:cover; background-position:center;
     color:#fff; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
     padding:40px 20px;
 }
-.hero h1{ font-size:42px; color:#ffb347; }
+.hero h1{ font-size:42px; color:#ffb347; line-height:1.1; }
 .highlight{ color:#00ffff!important; font-weight:bold; margin-top:15px; }
+.btn-primary{ display:inline-block; padding:12px 25px; background:#ff8c00; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; margin-top:15px; }
 
-/* === 10. ABOUT - About us section === */
+/* === ABOUT === */
 .about{
     min-height:80vh;
     background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(LA.jpg);
@@ -56,48 +50,79 @@ nav a{ text-decoration:none; color:#14022b; font-weight:bold; }
     color:#fff; font-size:22px; padding:40px;
 }
 
-/* === 11. SERVICES === */
+/* === SERVICES === */
 #services{ background:#f5f5f5; padding:60px 20px; text-align:center; }
-.services-box ul{ list-style:none; margin:20px 0; } /* No dots */
+.services-box ul{ list-style:none; margin:20px 0; }
 
-/* === 12. MEALS - Food cards === */
+/* === MEALS - Food menu === */
 #meals{ background:#fff; padding:60px 20px; text-align:center; }
 .menu-sub{ color:#555; margin-bottom:15px; }
-.food{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; } /* Auto grid */
-.card{ border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,.15); background:#fff; }
-.card img{ width:100%; height:180px; object-fit:cover; }
+
+/* Grid - arranges cards */
+.food{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); /* Auto columns */
+    gap:20px; /* Space between cards */
+    padding:20px 0;
+}
+
+/* One food card */
+.card{
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    background:#fff;
+}
+.card img{ width:100%; height:180px; object-fit:cover; } /* Food photo */
 .card-body{ padding:15px; }
+.card-body h3{ color:#333; }
 .card-body p{ color:#ff8c00; font-weight:bold; font-size:18px; margin:5px 0 10px; }
-.whatsapp-link{ display:block; background:#25D366; color:#fff; padding:12px; border-radius:6px; text-decoration:none; font-weight:bold; text-align:center; }
 
-/* === 13. BUTTONS === */
-.btn-primary{ display:inline-block; padding:12px 25px; background:#ff8c00; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; margin-top:15px; }
+/* === WHATSAPP BUTTON FIX - For your <a><button> structure === */
+.whatsapp-link{ text-decoration:none; display:block; } /* The <a> tag - no underline, full width */
+.whatsapp-link button{
+    width:100%; /* Make button full width */
+    padding:12px;
+    background:#25D366; /* WhatsApp green */
+    color:#fff;
+    border:none; /* Remove default border */
+    border-radius:6px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.whatsapp-link button:hover{ background:#1ebe5a; } /* Darker green on hover */
 
-/* === 14. CONTACT === */
+/* === CONTACT === */
 .contact{ text-align:center; background:#2f4f2f; color:#fff; padding:60px 20px; }
 
-/* === 15. RESERVATION FORM === */
+/* === RESERVATION FORM === */
 #reservation{ padding:60px 20px; background:#fff8f0; }
 .nasser{ max-width:640px; margin:0 auto; padding:30px; border:1px solid #eadfd0; border-radius:18px; background:#fffdf9; }
 .field{ margin-bottom:15px; text-align:left; }
 .field label{ display:block; font-weight:bold; margin-bottom:5px; }
-.field input,.field select,.field textarea{ width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:15px; }
-.btn-whatsapp{ display:block; width:100%; padding:14px; background:#25D366; color:#fff; border-radius:10px; font-size:18px; font-weight:bold; border:none; cursor:pointer; }
+.field input,.field select,.field textarea{ width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; }
+.btn-whatsapp{ width:100%; padding:14px; background:#25D366; color:#fff; border:none; border-radius:10px; font-size:18px; font-weight:bold; cursor:pointer; }
 
-/* === 16. FOOTER === */
+/* === FOOTER === */
 footer{ padding:20px; text-align:center; background:#020617; color:#94a3b8; }
 
-/* === 17. MOBILE PHONE - This works only on small screens === */
+/* === MOBILE - Only for phones (screen less than 768px) === */
 @media(max-width:768px){
   .hamburger{ display:block; } /* Show ☰ on phone */
+  
   nav{
-    position:absolute; /* Place below header */
+    position:absolute; /* Place below orange bar */
     top:100%; left:0; width:100%;
     background:#ff8c00;
-    flex-direction:column; /* Stack vertically */
-    display:none; /* Hidden by default */
+    flex-direction:column; /* Stack links vertical */
+    display:none; /* Hidden until clicked */
   }
-  nav a{ width:100%; padding:16px 20px; border-bottom:1px solid rgba(0,0,0,0.1); } /* Full width links */
-  #check:checked ~ nav{ display:flex!important; } /* MAGIC: When checkbox checked, show menu */
-  .hero h1{ font-size:32px; } /* Smaller text on phone */
+  
+  nav a{ width:100%; padding:16px 20px; border-bottom:1px solid rgba(0,0,0,0.1); }
+  
+  /* MAGIC: When checkbox checked, show menu */
+  #check:checked ~ nav{ display:flex!important; }
+  
+  .hero h1{ font-size:32px; }
 }
