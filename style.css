@@ -19,13 +19,13 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 .logo{ color: #fff; font-size: 22px; font-weight: bold; }
-nav{ display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+nav{ display: flex; gap: 15px; align-items: center; }
 nav a{ text-decoration: none; color: #14022b; font-weight: bold; }
 nav a:hover{ color: white; }
 .btn-res{ background: #14022b; color: white !important; padding: 8px 15px; border-radius: 5px; text-decoration: none; }
+.hamburger{ display: none; background: none; border: none; color: white; font-size: 28px; cursor: pointer; }
 .hero{
     min-height: 80vh;
     background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(background.jpg);
@@ -93,29 +93,21 @@ nav a:hover{ color: white; }
 .small-note{ text-align:center; margin-top:10px; font-size:13px; color:#888; }
 footer{ padding: 20px; text-align: center; background: #020617; color: #94a3b8; }
 
-/* --- NEW PERFECT MOBILE FIX --- */
+/* MOBILE HAMBURGER */
 @media(max-width: 768px){
-  header{
-    flex-direction: column;
-    padding: 12px;
-    gap: 10px;
-  }
-  .logo{
-    font-size: 20px;
-    text-align: center;
-    width: 100%;
-  }
+  .hamburger{ display: block; }
   nav{
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    justify-content: center;
-    gap: 10px 14px;
+    background: #ff8c00;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    display: none;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   }
-  nav a{
-    font-size: 14px;
-  }
+  nav.active{ display: flex; }
   .hero h1{ font-size: 32px; }
-  .hero{
-    min-height: 70vh;
-    padding: 30px 15px;
-  }
 }
