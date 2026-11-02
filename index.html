@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>KACHUMBALI RESTAURANT</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo">KACHUMBALI RESTAURANT</h1>
+        <nav>
+            <a href="#index">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#services">SERVICES</a>
+            <a href="#meals">MEALS</a>
+            <a href="#contact">CONTACT</a>
+            <a href="#reservation" class="btn-res">Reservation</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="index">
+            <div class="hero">
+                <h1>WELCOME TO KACHUMBALI RESTAURANT</h1>
+                <p>Welcome to our restaurant! We are delighted to have you here.</p>
+                <p class="highlight">We serve you first and fast - Enjoy the best from its source</p>
+                <a href="#about" class="btn-primary">More about us</a>
+            </div>
+        </section>
+
+         <section id="about">
+            <div class="about">
+                <h1>ABOUT US</h1>
+                <p>We offer both local and international foods at affordable prices</p>
+                <p>We are located at Nakibinge Road near Mother's Gift Supermarket</p>
+                <p>We serve the best food in the region - Come one, come all</p>
+                <a href="#services"><button class="btn-primary">More info</button></a>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="services-box">
+                <h1>OUR SERVICES</h1>
+                <ul>
+                    <li>Deliveries</li>
+                    <li>Free WiFi</li>
+                    <li>Take Away</li>
+                    <li>Table Reservation</li>
+                    <li>Parking</li>
+                    <li>Event Hosting</li>
+                </ul>
+                <a href="#meals"><button class="btn-primary">OUR MENU</button></a>
+            </div>
+        </section>
+
+        <section id="meals">
+            <h1>MENU</h1>
+            <p class="menu-sub">Click to order directly on WhatsApp</p>
+            <div class="food">
+                <div class="card">
+                    <img src="burger.jpg" alt="Burger">
+                    <div class="card-body">
+                        <h3>Burger</h3><p>UGX 20,000</p>
+                        <a href="https://wa.me/256757260923?text=Hello%20KACHUMBALI%2C%20I%20want%20to%20order%20Burger" class="whatsapp-link" target="_blank">Order on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="rice.jpg" alt="Pilao">
+                    <div class="card-body">
+                        <h3>Pilao Rice</h3><p>UGX 10,000</p>
+                        <a href="https://wa.me/256757260923?text=Hello%20KACHUMBALI%2C%20I%20want%20to%20order%20Pilao%20Rice" class="whatsapp-link" target="_blank">Order on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="DI.jpg" alt="Chicken">
+                    <div class="card-body">
+                        <h3>Chicken & Chips</h3><p>UGX 21,000</p>
+                        <a href="https://wa.me/256757260923?text=Hello%20KACHUMBALI%2C%20I%20want%20to%20order%20Chicken%20and%20Chips" class="whatsapp-link" target="_blank">Order on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section id="contact">
+            <div class="contact">
+                <h2>LET'S CONNECT</h2>
+                <p>We are always open and happy to hear from you.</p>
+                <h3>Call us</h3>
+                <p><em>+256 757 260 923</em></p>
+                <p><em>+256 778 107 900</em></p>
+                <h3>Email us on</h3>
+                <p><b>kachumbalirestaurant@gmail.com</b></p>
+            </div>
+        </section>
+
+        <section id="reservation">
+            <div class="nasser">
+                <h2>Request a Reservation</h2>
+                <p class="res-intro">Fill form and it will come directly to our WhatsApp 0757260923</p>
+                
+                <div class="field"><label>Full Name</label><input type="text" id="rName" placeholder="e.g. John Kato" required></div>
+                <div class="field"><label>Phone Number</label><input type="tel" id="rPhone" placeholder="07XX XXX XXX" required></div>
+                <div class="field"><label>Date</label><input type="date" id="rDate" required></div>
+                <div class="field"><label>Time</label><input type="time" id="rTime" required></div>
+                <div class="field"><label>Number of Guests</label>
+                    <select id="rGuests" required>
+                        <option value="">Select guests</option>
+                        <option>1 Person</option><option>2 People</option><option>3 People</option><option>4 People</option><option>5+ People</option>
+                    </select>
+                </div>
+                <div class="field"><label>Special Requests</label><textarea id="rRequests" placeholder="Birthday, window seat, etc"></textarea></div>
+
+                <button type="button" class="btn-whatsapp" onclick="sendReservation()">Send Reservation to WhatsApp</button>
+                <p class="small-note">Will open WhatsApp with all your details already written</p>
+            </div>
+        </section>
+    </main>
+
+    <footer><p>&copy; 2026 KACHUMBALI RESTAURANT</p></footer>
+
+<!-- THIS IS THE DRIVER SCRIPT YOU ASKED FOR - INSIDE -->
+<script>
+function sendReservation(){
+    var name = document.getElementById('rName').value;
+    var phone = document.getElementById('rPhone').value;
+    var date = document.getElementById('rDate').value;
+    var time = document.getElementById('rTime').value;
+    var guests = document.getElementById('rGuests').value;
+    var requests = document.getElementById('rRequests').value;
+
+    if(!name || !phone || !date || !time || !guests){
+        alert('Please fill all fields bro');
+        return;
+    }
+
+    var message = "Hello KACHUMBALI RESTAURANT, I want to reserve a table: \n\nName: " + name + "\nPhone: " + phone + "\nDate: " + date + "\nTime: " + time + "\nGuests: " + guests + "\nRequests: " + requests;
+
+    var url = "https://wa.me/256757260923?text=" + encodeURIComponent(message);
+    window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
