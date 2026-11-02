@@ -21,7 +21,7 @@ header{
     align-items: center;
     flex-wrap: wrap;
 }
-.logo{ color: #fff; font-size: 22px; }
+.logo{ color: #fff; font-size: 22px; font-weight: bold; }
 nav{ display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
 nav a{ text-decoration: none; color: #14022b; font-weight: bold; }
 nav a:hover{ color: white; }
@@ -33,8 +33,8 @@ nav a:hover{ color: white; }
     color: white; display: flex; flex-direction: column;
     justify-content: center; align-items: center; text-align: center; padding: 40px 20px;
 }
-.hero h1{ font-size: 45px; color: #ffb347; margin-bottom: 20px; }
-.highlight{ color: #00ffff !important; margin-top: 15px; font-weight: bold; }
+.hero h1{ font-size: 45px; color: #ffb347; margin-bottom: 20px; line-height: 1.1; }
+.highlight{ color: #00ffff !important; margin-top: 15px; font-weight: bold; font-size: 18px; }
 .about{
     min-height: 80vh;
     background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(LA.jpg);
@@ -92,4 +92,30 @@ nav a:hover{ color: white; }
 .btn-whatsapp:hover{ background:#128C7E; }
 .small-note{ text-align:center; margin-top:10px; font-size:13px; color:#888; }
 footer{ padding: 20px; text-align: center; background: #020617; color: #94a3b8; }
-@media(max-width: 600px){ .hero h1{ font-size: 28px; } header{ flex-direction: column; } }
+
+/* --- NEW PERFECT MOBILE FIX --- */
+@media(max-width: 768px){
+  header{
+    flex-direction: column;
+    padding: 12px;
+    gap: 10px;
+  }
+  .logo{
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  nav{
+    width: 100%;
+    justify-content: center;
+    gap: 10px 14px;
+  }
+  nav a{
+    font-size: 14px;
+  }
+  .hero h1{ font-size: 32px; }
+  .hero{
+    min-height: 70vh;
+    padding: 30px 15px;
+  }
+}
