@@ -93,13 +93,17 @@ nav a:hover{ color: white; }
 .small-note{ text-align:center; margin-top:10px; font-size:13px; color:#888; }
 footer{ padding: 20px; text-align: center; background: #020617; color: #94a3b8; }
 
-/* MOBILE HAMBURGER - FINAL FIX */
+* Hide the checkbox */
+.menu-toggle{ display: none; }
+.hamburger{ display: none; background: none; border: none; color: white; font-size: 28px; cursor: pointer; }
+
+/* MOBILE - NO JS NEEDED */
 @media(max-width: 768px){
-  header{
-    position: relative;
-  }
   .hamburger{ 
     display: block !important; 
+  }
+  header{
+    position: relative;
   }
   nav{
     position: absolute !important;
@@ -114,8 +118,12 @@ footer{ padding: 20px; text-align: center; background: #020617; color: #94a3b8; 
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     z-index: 100;
   }
-  nav.active{ 
-    display: flex !important; 
+  /* MAGIC: When checkbox is checked, show menu */
+  .menu-toggle:checked ~ nav{
+    display: flex !important;
+  }
+  .menu-toggle:checked ~ .hamburger{
+    content: "✕";
   }
   .hero h1{ font-size: 32px; }
 }
